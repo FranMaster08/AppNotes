@@ -1,0 +1,9 @@
+.navbar-light .navbar-nav .nav-link {
+    color:white !important;
+}
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: white !important;
+}
+.navbar-light .navbar-brand {
+    color:white !important;
+}

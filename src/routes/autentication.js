@@ -7,6 +7,18 @@ app.get('/signup',(req,res)=>{
 
 });
 
+app.get('/signin',(req,res)=>{
+  res.render('auth/singin')
+});
+
+app.post('/signin',(req,res,next)=>{
+  passport.authenticate('local.singin',{
+    successRedirect:'/profile',
+    failureRedirect:'/signin',
+    failureFlash:true,session:false
+  })(req,res,next)
+})
+
 
 
 app.post('/signup',passport.authenticate('local.singup',{

@@ -7,14 +7,13 @@ app.get('/signup',(req,res)=>{
 
 });
 
-app.post('/signup',(req,res)=>{
-    passport.authenticate('local.singup',{
-        succesRedirect:'/profile',
-        failureRedirect:'/singup',
-        failureFlash:true
-    })
-    console.log(req.body);
-});
+
+
+app.post('/signup',passport.authenticate('local.singup',{
+    successRedirect:'/profile',
+    failureRedirect:'/signup',
+    failureFlash:true
+}));
 
 app.get('/profile',(req,res)=>{
   res.send('ok')
